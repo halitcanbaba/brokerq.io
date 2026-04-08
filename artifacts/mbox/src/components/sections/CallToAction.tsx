@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 
 export default function CallToAction() {
@@ -26,9 +27,11 @@ export default function CallToAction() {
           </p>
           
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-            <Button size="lg" className="w-full sm:w-auto text-lg px-8 h-14 bg-[#00d4aa] hover:bg-[#00b38f] text-[#0a0a1a] font-bold" data-testid="btn-schedule-demo">
-              Schedule Demo
-            </Button>
+            <Link href="/contact">
+              <Button size="lg" className="w-full sm:w-auto text-lg px-8 h-14 bg-[#00d4aa] hover:bg-[#00b38f] text-[#0a0a1a] font-bold" data-testid="btn-schedule-demo">
+                Schedule Demo
+              </Button>
+            </Link>
             <Button size="lg" variant="outline" className="w-full sm:w-auto text-lg px-8 h-14 border-[#2a2a4a] text-white hover:bg-[#2a2a4a] hover:text-white" data-testid="btn-view-docs">
               View Documentation
             </Button>
