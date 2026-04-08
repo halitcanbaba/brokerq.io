@@ -1,0 +1,31 @@
+kind = "web"
+previewPath = "/"
+title = "MetaTrader Solutions"
+version = "1.0.0"
+id = "artifacts/mbox"
+router = "path"
+
+[[integratedSkills]]
+name = "react-vite"
+version = "1.0.0"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 23391
+
+[services.development]
+run = "pnpm --filter @workspace/mbox run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/mbox", "run", "build" ]
+publicDir = "artifacts/mbox/dist/public"
+serve = "static"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "23391"
+BASE_PATH = "/"
