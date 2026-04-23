@@ -1,0 +1,16 @@
+services:
+  mbox-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: mbox-frontend
+    ports:
+      - "3013:80"
+    restart: unless-stopped
+    networks:
+      - web
+
+networks:
+  web:
+    external: true

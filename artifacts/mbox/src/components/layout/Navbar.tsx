@@ -2,10 +2,12 @@ import React from "react";
 import { Link, useLocation } from "wouter";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useBrand } from "@/hooks/use-brand";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
   const [location] = useLocation();
+  const { logoText } = useBrand();
   const isHome = location === "/";
 
   const scrollToSection = (id: string) => {
@@ -84,12 +86,12 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50 bg-[#0a0a1a]/80 backdrop-blur-md border-b border-[#2a2a4a]">
+    <nav className="fixed top-0 w-full z-50 bg-[#0a0a1a]/95 border-b border-[#2a2a4a]" style={{ willChange: 'transform' }}>
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link href="/" data-testid="link-logo">
-            <span className="text-[#00d4aa] font-bold text-2xl tracking-tighter cursor-pointer">MBox</span>
+            <span className="text-[#00d4aa] font-bold text-2xl tracking-tighter cursor-pointer">{logoText}</span>
           </Link>
 
           {/* Desktop Nav */}

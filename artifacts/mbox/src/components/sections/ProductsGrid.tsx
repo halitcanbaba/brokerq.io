@@ -8,7 +8,7 @@ interface ProductsGridProps {
   searchQuery: string;
 }
 
-const categories: Category[] = ["All", "Platform", "Migration", "Risk", "CRM", "Portal", "Infrastructure"];
+const categories: Category[] = ["All", "Platform", "Trading", "Migration", "Risk", "CRM", "Portal", "Infrastructure", "Gateway", "Consulting"];
 
 export default function ProductsGrid({ searchQuery }: ProductsGridProps) {
   const [activeCategory, setActiveCategory] = useState<Category>("All");
@@ -33,7 +33,7 @@ export default function ProductsGrid({ searchQuery }: ProductsGridProps) {
           className="flex flex-col items-center justify-center space-y-4 mb-16 text-center"
         >
           <h2 className="text-3xl md:text-4xl font-bold">Brokerage Infrastructure</h2>
-          <p className="text-[#a7a7b8] max-w-2xl">Discover our suite of institutional-grade MetaTrader plugins and services.</p>
+          <p className="text-[#a7a7b8] max-w-2xl">Discover our suite of institutional-grade broker plugins and services.</p>
         </motion.div>
 
         {/* Filters */}
@@ -43,7 +43,7 @@ export default function ProductsGrid({ searchQuery }: ProductsGridProps) {
               key={category}
               onClick={() => setActiveCategory(category)}
               data-testid={`filter-${category.toLowerCase()}`}
-              className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 border ${
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors duration-200 border ${
                 activeCategory === category
                   ? "bg-[#00d4aa]/10 text-[#00d4aa] border-[#00d4aa] shadow-[0_0_15px_rgba(0,212,170,0.2)]"
                   : "bg-[#111127] text-[#a7a7b8] border-[#2a2a4a] hover:border-[#0ea5e9] hover:text-white"

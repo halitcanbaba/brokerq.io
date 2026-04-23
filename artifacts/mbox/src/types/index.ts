@@ -1,4 +1,4 @@
-export type Category = "All" | "Platform" | "Migration" | "Risk" | "CRM" | "Portal" | "Infrastructure";
+export type Category = "All" | "Platform" | "Migration" | "Risk" | "CRM" | "Portal" | "Infrastructure" | "Trading" | "Gateway" | "Consulting";
 
 export interface Product {
   id: string;

@@ -1,0 +1,18 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker:*)",
+      "Bash(nginx:*)",
+      "Bash(netstat -ano)",
+      "Read(//c//**)",
+      "Read(//c/Program Files/**)",
+      "Bash(DOCKER_BUILDKIT=0 docker build -t mbox-frontend --target production .)",
+      "Bash(DOCKER_BUILDKIT=0 docker compose up:*)",
+      "Bash(DOCKER_BUILDKIT=0 docker build -t mbox-mbox-frontend --target production .)",
+      "Bash(npx vite:*)",
+      "Bash(pnpm add *)",
+      "Bash(npm --version)",
+      "Bash(npm install *)"
+    ]
+  }
+}

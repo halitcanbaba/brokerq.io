@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:g="http://base.google.com/ns/1.0">
+  <channel>
+    <title>brokerQ.io — FX Broker Infrastructure Services</title>
+    <link>https://brokerq.io</link>
+    <description>Enterprise-grade platform tools, migration services, and risk management for FX brokers worldwide.</description>
+
+    <item>
+      <g:id>mt-platform-installation</g:id>
+      <g:title>MT5 &amp; MT4 Platform Installation</g:title>
+      <g:description>Complete broker platform setup, configuration, and optimization for MT4 and MT5 environments. Turnkey deployment with zero-downtime go-live.</g:description>
+      <g:link>https://brokerq.io/products/mt-platform-installation</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>5000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Platform Installation</g:product_type>
+    </item>
+
+    <item>
+      <g:id>server-maintenance</g:id>
+      <g:title>Server Maintenance &amp; Monitoring</g:title>
+      <g:description>24/7 monitoring, patching, and performance tuning for your trading server infrastructure. 99.9% uptime SLA backed by financial credits.</g:description>
+      <g:link>https://brokerq.io/products/server-maintenance</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>1500.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Infrastructure</g:product_type>
+    </item>
+
+    <item>
+      <g:id>mt5-migration-tool</g:id>
+      <g:title>MT5 Migration Tool</g:title>
+      <g:description>Seamlessly migrate client accounts, trading history, and open positions from MT4 to MT5 with sub-60-second downtime.</g:description>
+      <g:link>https://brokerq.io/products/mt5-migration-tool</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>8000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Migration</g:product_type>
+    </item>
+
+    <item>
+      <g:id>mt4-migration-tool</g:id>
+      <g:title>MT4 Migration Tool</g:title>
+      <g:description>Automated migration utilities to transfer data between MT4 server instances with zero downtime.</g:description>
+      <g:link>https://brokerq.io/products/mt4-migration-tool</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>6000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Migration</g:product_type>
+    </item>
+
+    <item>
+      <g:id>risk-monitoring-system</g:id>
+      <g:title>Risk Management System</g:title>
+      <g:description>Comprehensive risk management suite: real-time exposure monitoring, hedging analytics, automated alerts, and P&amp;L controls for broker operations.</g:description>
+      <g:link>https://brokerq.io/products/risk-monitoring-system</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>4500.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Risk Management</g:product_type>
+    </item>
+
+    <item>
+      <g:id>crm-integrated</g:id>
+      <g:title>CRM Integration</g:title>
+      <g:description>Bi-directional CRM sync: client lifecycle management, KYC workflows, and trading account provisioning. Salesforce, HubSpot, Zoho supported.</g:description>
+      <g:link>https://brokerq.io/products/crm-integrated</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>3500.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; CRM</g:product_type>
+    </item>
+
+    <item>
+      <g:id>client-panel</g:id>
+      <g:title>Client Panel (Broker Portal)</g:title>
+      <g:description>White-label client portal with live account dashboard, deposit/withdrawal flows, and document management.</g:description>
+      <g:link>https://brokerq.io/products/client-panel</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>4000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Portal</g:product_type>
+    </item>
+
+    <item>
+      <g:id>copytrader-tool</g:id>
+      <g:title>Copytrader Tool</g:title>
+      <g:description>Copy trading solution enabling followers to mirror master trader positions in real time, with or without a dedicated client panel.</g:description>
+      <g:link>https://brokerq.io/products/copytrader-tool</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>3000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Trading</g:product_type>
+    </item>
+
+    <item>
+      <g:id>proptrade-tool</g:id>
+      <g:title>Proptrade Tool</g:title>
+      <g:description>Proprietary trading firm management: challenges, evaluations, funded account provisioning, and profit-split automation.</g:description>
+      <g:link>https://brokerq.io/products/proptrade-tool</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>5500.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Trading</g:product_type>
+    </item>
+
+    <item>
+      <g:id>pamm-mamm-plugins</g:id>
+      <g:title>PAMM / MAMM Plugins</g:title>
+      <g:description>Percentage and Multi-Account Manager plugins for automated fund allocation, investor reporting, and performance fee calculations.</g:description>
+      <g:link>https://brokerq.io/products/pamm-mamm-plugins</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>3500.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Trading</g:product_type>
+    </item>
+
+    <item>
+      <g:id>holiday-swap-manager</g:id>
+      <g:title>Holiday &amp; Swap Control Manager</g:title>
+      <g:description>Multi-platform automated holiday schedule and swap rate management with intelligent swap recommendation system.</g:description>
+      <g:link>https://brokerq.io/products/holiday-swap-manager</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>2500.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Platform</g:product_type>
+    </item>
+
+    <item>
+      <g:id>group-spread-swap-analyzer</g:id>
+      <g:title>Group Spread &amp; Swap Analyzer</g:title>
+      <g:description>Automated analysis of all groups and symbols for swap and spread configurations — flags anomalies and inconsistencies across your platform.</g:description>
+      <g:link>https://brokerq.io/products/group-spread-swap-analyzer</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>2000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Risk</g:product_type>
+    </item>
+
+    <item>
+      <g:id>license-consulting</g:id>
+      <g:title>Offshore &amp; Onshore License Consulting</g:title>
+      <g:description>Expert guidance for broker licensing: offshore (SVG, Vanuatu, Seychelles) and onshore (CySEC, FCA, ASIC) regulatory frameworks and application processes.</g:description>
+      <g:link>https://brokerq.io/products/license-consulting</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>7500.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Consulting</g:product_type>
+    </item>
+
+    <item>
+      <g:id>crypto-gateway</g:id>
+      <g:title>Crypto Gateway</g:title>
+      <g:description>Per-customer crypto wallets with auto-sweep to your cold storage — incoming deposits are instantly credited to client trading accounts.</g:description>
+      <g:link>https://brokerq.io/products/crypto-gateway</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>4500.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Gateway</g:product_type>
+    </item>
+
+    <item>
+      <g:id>stock-datafeed</g:id>
+      <g:title>Stock Datafeed Integration</g:title>
+      <g:description>Real-time stock market data feed integration for MT4/MT5 platforms — equities, indices, and commodities from global exchanges.</g:description>
+      <g:link>https://brokerq.io/products/stock-datafeed</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>3000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Platform</g:product_type>
+    </item>
+
+  </channel>
+</rss>

@@ -3,16 +3,29 @@ import { motion } from "framer-motion";
 import { Search } from "lucide-react";
 import ParticlesBackground from "@/components/background/ParticlesBackground";
 import Navbar from "@/components/layout/Navbar";
+import Seo, { SITE } from "@/components/Seo";
 import Footer from "@/components/layout/Footer";
 import ProductCard from "@/components/ui/ProductCard";
 import { products } from "@/data/products";
 import type { Category } from "@/types";
 
-const categories: Category[] = ["All", "Platform", "Infrastructure", "Migration", "Risk", "CRM", "Portal"];
+const categories: Category[] = ["All", "Platform", "Trading", "Migration", "Risk", "CRM", "Portal", "Infrastructure", "Gateway", "Consulting"];
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [activeCategory, setActiveCategory] = useState<Category>("All");
+
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "brokerQ.io Products & Services",
+    itemListElement: products.map((p, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      url: `${SITE.baseUrl}/products/${p.id}`,
+      name: p.title,
+    })),
+  };
 
   const filtered = products.filter((p) => {
     const matchesCategory = activeCategory === "All" || p.category === activeCategory;
@@ -25,6 +38,19 @@ export default function ProductsPage() {
 
   return (
     <div className="relative min-h-screen text-foreground dark">
+      <Seo
+        title="MetaTrader Solutions & FX Broker Products"
+        description="Browse the full catalogue of brokerQ.io products: MT4/MT5 installation, migration tools, copy trading, PAMM/MAMM plugins, risk management, CRM integration, client portal, crypto gateway and more."
+        keywords={[
+          "MetaTrader products",
+          "MT4 MT5 plugins",
+          "FX broker software",
+          "copy trading plugin",
+          "MT4 MT5 migration tool",
+          "broker CRM",
+        ]}
+        jsonLd={[itemListSchema]}
+      />
       <ParticlesBackground />
       <Navbar />
 
@@ -41,7 +67,7 @@ export default function ProductsPage() {
               Product Catalog
             </span>
             <h1 className="text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
-              Enterprise MetaTrader<br />
+              Enterprise Broker<br />
               <span className="text-[#00d4aa]">Solutions</span>
             </h1>
             <p className="text-[#a7a7b8] text-lg max-w-2xl mx-auto">
@@ -63,6 +89,7 @@ export default function ProductsPage() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search products and services..."
+                aria-label="Search broker products and services"
                 data-testid="input-products-search"
                 className="w-full pl-11 pr-4 py-3 rounded-xl bg-[#111127] border border-[#2a2a4a] text-white placeholder-[#a7a7b8] focus:outline-none focus:border-[#00d4aa]/60 transition-colors text-sm"
               />
@@ -81,7 +108,7 @@ export default function ProductsPage() {
                 key={cat}
                 onClick={() => setActiveCategory(cat)}
                 data-testid={`filter-${cat.toLowerCase()}`}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all border ${
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-colors border ${
                   activeCategory === cat
                     ? "bg-[#00d4aa] text-[#0a0a1a] border-[#00d4aa]"
                     : "bg-[#111127] text-[#a7a7b8] border-[#2a2a4a] hover:border-[#00d4aa]/40 hover:text-white"

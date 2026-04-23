@@ -3,11 +3,76 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>MetaTrader Solutions</title>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18076925164"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'AW-18076925164');
+    </script>
+
+    <!--
+      SEO head.
+      Page-specific <title>, <meta description>, canonical, OG, Twitter and
+      JSON-LD tags are emitted at runtime by the <Seo /> component (React 19
+      native metadata hoisting) AND injected at build time by
+      `scripts/build-seo.mjs` which generates per-route static index.html
+      files under dist/public/<route>/index.html for crawlers that do not
+      execute JavaScript. The tags in this file are ONLY defaults used on the
+      very first paint before the route-specific tags override them.
+    -->
+
+    <!-- Primary SEO defaults (overridden per route at build time) -->
+    <title>brokerQ.io | Enterprise FX Broker Infrastructure & Platform Solutions</title>
+    <meta name="description" content="Enterprise-grade platform tools, migration services, and risk management for FX brokers. MT4/MT5 installation, MetaTrader plugin development, copy trading, PAMM/MAMM, CRM integration and real-time risk monitoring." />
+    <meta name="author" content="brokerQ.io" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <link rel="canonical" href="https://brokerq.io/" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="mobile-web-app-capable" content="yes" />
+
+    <!-- Open Graph defaults -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://brokerq.io/" />
+    <meta property="og:title" content="brokerQ.io | Enterprise FX Broker Infrastructure & Platform Solutions" />
+    <meta property="og:description" content="Enterprise-grade platform tools, migration services, and risk management for FX brokers worldwide." />
+    <meta property="og:image" content="https://brokerq.io/opengraph.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="brokerQ.io" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image:alt" content="brokerQ.io — Enterprise FX Broker Infrastructure Solutions" />
+
+    <!-- Twitter Card defaults -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="brokerQ.io | Enterprise FX Broker Infrastructure & Platform Solutions" />
+    <meta name="twitter:description" content="Enterprise-grade platform tools, migration services, and risk management for FX brokers worldwide." />
+    <meta name="twitter:image" content="https://brokerq.io/opengraph.jpg" />
+
+    <!-- Theme & Mobile -->
+    <meta name="theme-color" content="#0a0a1a" />
+    <meta name="msapplication-TileColor" content="#00d4aa" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="brokerQ.io" />
+
+    <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Build-time SEO injection marker (do not remove). scripts/build-seo.mjs
+         replaces everything between the markers with per-route metadata. -->
+    <!--SEO_INJECT_START-->
+    <!--SEO_INJECT_END-->
   </head>
   <body>
     <div id="root"></div>

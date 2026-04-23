@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite --config vite.config.ts --host 0.0.0.0",
     "build": "vite build --config vite.config.ts",
+    "build:vite": "vite build --config vite.config.ts",
+    "build:seo": "node scripts/build-seo.mjs",
     "serve": "vite preview --config vite.config.ts --host 0.0.0.0",
     "typecheck": "tsc -p tsconfig.json --noEmit"
   },
@@ -76,6 +78,9 @@
   },
   "dependencies": {
     "@tsparticles/react": "^3.0.0",
-    "@tsparticles/slim": "^3.9.1"
+    "@tsparticles/slim": "^3.9.1",
+    "i18next": "^26.0.6",
+    "i18next-http-backend": "^3.0.5",
+    "react-i18next": "^17.0.4"
   }
 }

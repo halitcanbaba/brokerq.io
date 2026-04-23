@@ -57,6 +57,17 @@ export default defineConfig({
   build: {
     outDir: path.resolve(import.meta.dirname, "dist/public"),
     emptyOutDir: true,
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('framer-motion')) return 'framer';
+          if (id.includes('@tanstack/react-query')) return 'query';
+          if (id.includes('@radix-ui')) return 'ui';
+          if (id.includes('tsparticles')) return 'particles';
+          if (id.includes('wouter')) return 'router';
+        },
+      },
+    },
   },
   server: {
     port,
