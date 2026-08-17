@@ -1,6 +1,6 @@
 # Stage 1: Build frontend with pnpm workspace
 FROM node:22-slim AS build
-RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN corepack enable && corepack prepare pnpm@10.33.0 --activate
 WORKDIR /app
 
 # Workspace config (layer cache)
