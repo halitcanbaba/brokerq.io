@@ -67,7 +67,7 @@ export const demoProjects: DemoProject[] = [
     title: "Prop Tool",
     description:
       "Prop firm management platform — challenge phases, evaluation rules, funded account provisioning, breach detection and profit-split automation.",
-    url: "https://proptool.bitaker.io",
+    url: "https://prop.bitaker.io",
     category: "Trading",
     icon: "Trophy",
     productId: "proptrade-tool",
