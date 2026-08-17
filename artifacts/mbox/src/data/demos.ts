@@ -19,10 +19,10 @@ export interface DemoProject {
   };
 }
 
-const DEMO_CREDENTIALS = { username: "demo", password: "1234" };
+const DEMO_CREDENTIALS = { username: "demo", password: "demo123456" };
 
-function shots(id: string, count: number): string[] {
-  return Array.from({ length: count }, (_, i) => `/demos/${id}/${i + 1}.svg`);
+function shots(id: string, count: number, ext: "png" | "svg" = "svg"): string[] {
+  return Array.from({ length: count }, (_, i) => `/demos/${id}/${i + 1}.${ext}`);
 }
 
 export const demoProjects: DemoProject[] = [
@@ -35,7 +35,7 @@ export const demoProjects: DemoProject[] = [
     category: "Reporting",
     icon: "BarChart3",
     productId: "group-spread-swap-analyzer",
-    screenshots: shots("reporttool", 3),
+    screenshots: shots("reporttool", 3, "png"),
     credentials: DEMO_CREDENTIALS,
   },
   {
@@ -47,7 +47,7 @@ export const demoProjects: DemoProject[] = [
     category: "Risk",
     icon: "Shield",
     productId: "risk-monitoring-system",
-    screenshots: shots("riskmonitor", 3),
+    screenshots: shots("riskmonitor", 3, "png"),
     credentials: DEMO_CREDENTIALS,
   },
   {
@@ -59,7 +59,7 @@ export const demoProjects: DemoProject[] = [
     category: "Trading",
     icon: "Copy",
     productId: "copytrader-tool",
-    screenshots: shots("copytrader", 3),
+    screenshots: shots("copytrader", 3, "png"),
     credentials: DEMO_CREDENTIALS,
   },
   {
@@ -67,7 +67,7 @@ export const demoProjects: DemoProject[] = [
     title: "Prop Tool",
     description:
       "Prop firm management platform — challenge phases, evaluation rules, funded account provisioning, breach detection and profit-split automation.",
-    url: "https://proptool.brokerq.io",
+    url: "https://proptool.bitaker.io",
     category: "Trading",
     icon: "Trophy",
     productId: "proptrade-tool",

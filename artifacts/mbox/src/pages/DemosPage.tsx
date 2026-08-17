@@ -74,7 +74,7 @@ export default function DemosPage() {
               <span className="text-[#a7a7b8]">
                 All demos share one login — username{" "}
                 <span className="font-mono font-semibold text-white">demo</span>, password{" "}
-                <span className="font-mono font-semibold text-white">1234</span>
+                <span className="font-mono font-semibold text-white">demo123456</span>
               </span>
             </div>
           </motion.div>
