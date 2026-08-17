@@ -77,7 +77,7 @@ export const demoProjects: DemoProject[] = [
     category: "Trading",
     icon: "Trophy",
     productId: "proptrade-tool",
-    screenshots: shots("proptool", 3),
+    screenshots: shots("proptool", 3, "png"),
     credentials: DEMO_CREDENTIALS,
   },
   {
