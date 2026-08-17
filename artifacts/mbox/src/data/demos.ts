@@ -49,7 +49,7 @@ export const demoProjects: DemoProject[] = [
     url: "https://reporttool.brokerq.io",
     category: "Reporting",
     icon: "BarChart3",
-    productId: "group-spread-swap-analyzer",
+    productId: "report-tool",
     screenshots: shots("reporttool", 3, "png"),
     credentials: DEMO_CREDENTIALS,
   },

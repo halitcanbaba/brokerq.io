@@ -16,6 +16,13 @@ export const products: Product[] = [
     icon: "Wrench"
   },
   {
+    id: "report-tool",
+    title: "Report Tool",
+    description: "Automated broker reporting suite — design report templates once and run them on any date range, with scheduled volume, commission and P&L summaries across MT4/MT5 servers.",
+    category: "Reporting",
+    icon: "BarChart3"
+  },
+  {
     id: "mt5-migration-tool",
     title: "MT5 Migration Tool",
     description: "Seamlessly migrate client accounts, trading history, and open positions from MT4 to MT5.",

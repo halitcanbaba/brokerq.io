@@ -800,6 +800,94 @@ export const productDetails: Record<string, ProductDetail> = {
     ],
   },
 
+  "report-tool": {
+    headline: "Report Tool",
+    subtitle:
+      "Automated broker reporting — design a report once and run it on any date range and account filter, with scheduled delivery of volume, commission and P&L summaries across your MT4/MT5 servers.",
+    features: [
+      {
+        title: "Report Templates",
+        description:
+          "Design reusable report templates with custom columns, date parameters and account filters — run the same report across any period without rebuilding it.",
+        icon: "FileCheck",
+      },
+      {
+        title: "Scheduled Delivery",
+        description:
+          "Schedule daily, weekly or monthly reports to run automatically and land in your inbox or export folder — no manual pulls.",
+        icon: "CalendarClock",
+      },
+      {
+        title: "Volume, Commission & P&L",
+        description:
+          "Ready-made breakdowns of trading volume, commissions, swaps and group-level P&L across all servers and symbols.",
+        icon: "BarChart3",
+      },
+      {
+        title: "Multi-Server Consolidation",
+        description:
+          "Aggregate reporting across multiple MT4 and MT5 servers into a single consolidated view for management and regulators.",
+        icon: "Server",
+      },
+    ],
+    benefits: [
+      "Replace manual spreadsheet pulls with scheduled, repeatable reports",
+      "Consistent reporting across every MT4/MT5 server",
+      "Faster month-end close and regulatory reporting",
+      "Template-based design means non-technical staff can run reports",
+    ],
+    useCases: [
+      "Daily volume and commission reporting for management",
+      "Regulatory and audit exports on a fixed schedule",
+      "IB / partner performance and rebate reporting",
+    ],
+    seoTitle: "Broker Report Tool — Automated MT4/MT5 Reporting & Scheduling",
+    metaDescription:
+      "Automate FX broker reporting: design report templates once, schedule daily/weekly/monthly runs, and consolidate volume, commission and P&L across all your MT4/MT5 servers.",
+    seoKeywords: [
+      "broker reporting tool",
+      "MT4 MT5 reporting",
+      "automated broker reports",
+      "trading volume report",
+      "commission report",
+      "broker P&L report",
+      "scheduled broker reporting",
+    ],
+    longDescription:
+      "The brokerQ.io Report Tool turns broker reporting from a manual, error-prone spreadsheet job into a repeatable, scheduled process. You design a report template once — choosing columns, date parameters, account filters and grouping — and then run it on any date range, or schedule it to run automatically every day, week or month. Out of the box it produces trading volume breakdowns, commission and swap summaries, deposit/withdrawal reports and group-level P&L across all of your MetaTrader 4 and MetaTrader 5 servers, consolidated into a single view. Because templates are reusable and non-technical, your operations and finance teams can self-serve the numbers they need for management, partners and regulators without waiting on engineering.",
+    schemaType: "SoftwareApplication",
+    platforms: ["MetaTrader 4", "MetaTrader 5"],
+    specs: [
+      { label: "Report Design", value: "Reusable templates with custom columns & filters" },
+      { label: "Scheduling", value: "Daily / weekly / monthly automated runs" },
+      { label: "Coverage", value: "Volume, commission, swap, deposits, P&L" },
+      { label: "Servers", value: "Multi-server MT4 & MT5 consolidation" },
+      { label: "Delivery", value: "Email / export on schedule" },
+    ],
+    faqs: [
+      {
+        question: "Can I schedule reports to run automatically?",
+        answer:
+          "Yes. Any report template can be scheduled to run daily, weekly or monthly and delivered automatically, so management and finance receive the numbers without manual pulls.",
+      },
+      {
+        question: "Does the Report Tool work across multiple MT4/MT5 servers?",
+        answer:
+          "Yes. It consolidates reporting across all of your MetaTrader 4 and MetaTrader 5 servers into a single view, which is ideal for multi-server brokers and group-level reporting.",
+      },
+      {
+        question: "What kind of reports can it produce?",
+        answer:
+          "Trading volume breakdowns, commission and swap summaries, deposit/withdrawal reports and group-level P&L, all filterable by date range, group, account or symbol.",
+      },
+      {
+        question: "Do I need technical staff to build reports?",
+        answer:
+          "No. Reports are built from reusable templates with a point-and-click column, filter and date-parameter design, so operations and finance teams can create and run reports themselves.",
+      },
+    ],
+  },
+
   "grey-label": {
     headline: "Grey Label Solution",
     subtitle:

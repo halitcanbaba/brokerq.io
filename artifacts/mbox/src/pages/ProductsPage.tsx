@@ -9,7 +9,7 @@ import ProductCard from "@/components/ui/ProductCard";
 import { products } from "@/data/products";
 import type { Category } from "@/types";
 
-const categories: Category[] = ["All", "Platform", "Trading", "Migration", "Risk", "CRM", "Portal", "Infrastructure", "Gateway", "Consulting"];
+const categories: Category[] = ["All", "Platform", "Trading", "Migration", "Risk", "Reporting", "CRM", "Portal", "Infrastructure", "Gateway", "Consulting"];
 
 export default function ProductsPage() {
   const [searchQuery, setSearchQuery] = useState("");
