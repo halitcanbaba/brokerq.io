@@ -99,7 +99,7 @@ export const demoProjects: DemoProject[] = [
     category: "Gateway",
     icon: "Wallet",
     productId: "crypto-gateway",
-    screenshots: shots("pay", 3),
+    screenshots: shots("pay", 3, "png"),
     contactOnly: true,
   },
 ];
