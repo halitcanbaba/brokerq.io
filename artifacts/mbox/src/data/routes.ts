@@ -74,6 +74,21 @@ export const staticRoutes: StaticRouteMeta[] = [
     changefreq: "monthly",
   },
   {
+    path: "/demos",
+    title: "Live Demos — Try Our Broker Tools Online",
+    description:
+      "Explore live demos of brokerQ.io products: broker reporting, real-time risk monitoring, copy trading, prop firm management and crypto payment gateway. Log in instantly with demo credentials.",
+    keywords: [
+      "FX broker software demo",
+      "risk monitoring demo",
+      "copy trading demo",
+      "prop firm software demo",
+      "crypto payment gateway demo",
+    ],
+    priority: 0.9,
+    changefreq: "monthly",
+  },
+  {
     path: "/about",
     title: "About brokerQ.io — 12+ Years of FX Broker Technology",
     description:

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="750" viewBox="0 0 1200 750">
+  <rect width="1200" height="750" fill="#0a0a1a"/>
+  <!-- sidebar -->
+  <rect x="0" y="0" width="220" height="750" fill="#111127"/>
+  <line x1="220" y1="0" x2="220" y2="750" stroke="#2a2a4a"/>
+  <text x="24" y="52" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="bold" fill="#00d4aa">brokerQ Pay</text>
+  <text x="24" y="74" font-family="Segoe UI, Arial, sans-serif" font-size="11" fill="#a7a7b8">by brokerQ.io</text>
+  <line x1="16" y1="96" x2="204" y2="96" stroke="#2a2a4a"/>
+  
+      <rect x="16" y="134" width="188" height="40" rx="8" fill="#00d4aa" opacity="0.12"/>
+      <rect x="16" y="134" width="3" height="40" rx="1.5" fill="#00d4aa"/>
+      <circle cx="40" cy="154" r="6" fill="#00d4aa"/>
+      <text x="58" y="159" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#e8e8f0">Dashboard</text>
+      
+      <circle cx="40" cy="206" r="6" fill="#3a3a5a"/>
+      <text x="58" y="211" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#a7a7b8">Deposits</text>
+      
+      <circle cx="40" cy="258" r="6" fill="#3a3a5a"/>
+      <text x="58" y="263" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#a7a7b8">Wallets</text>
+      
+      <circle cx="40" cy="310" r="6" fill="#3a3a5a"/>
+      <text x="58" y="315" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#a7a7b8">Sweeps</text>
+      
+      <circle cx="40" cy="362" r="6" fill="#3a3a5a"/>
+      <text x="58" y="367" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#a7a7b8">Withdrawals</text>
+      
+      <circle cx="40" cy="414" r="6" fill="#3a3a5a"/>
+      <text x="58" y="419" font-family="Segoe UI, Arial, sans-serif" font-size="15" fill="#a7a7b8">Settings</text>
+  <!-- topbar -->
+  <rect x="220" y="0" width="980" height="64" fill="#111127"/>
+  <line x1="220" y1="64" x2="1200" y2="64" stroke="#2a2a4a"/>
+  <text x="252" y="40" font-family="Segoe UI, Arial, sans-serif" font-size="17" font-weight="600" fill="#e8e8f0">Gateway Overview</text>
+  <circle cx="1156" cy="32" r="16" fill="#2a2a4a"/>
+  <text x="1156" y="37" font-family="Segoe UI, Arial, sans-serif" font-size="13" fill="#00d4aa" text-anchor="middle">D</text>
+  <rect x="950" y="18" width="170" height="28" rx="14" fill="#0a0a1a" stroke="#2a2a4a"/>
+  <text x="964" y="37" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a7a7b8">Search...</text>
+      <rect x="252" y="92" width="211" height="110" rx="12" fill="#111127" stroke="#2a2a4a"/>
+      <text x="272" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a7a7b8">DEPOSITS (24H)</text>
+      <text x="272" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="bold" fill="#e8e8f0">$412,806</text>
+      <text x="272" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#00d4aa">▲ 14.2%</text>
+      <rect x="487" y="92" width="211" height="110" rx="12" fill="#111127" stroke="#2a2a4a"/>
+      <text x="507" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a7a7b8">CONFIRMED TXS</text>
+      <text x="507" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="bold" fill="#e8e8f0">1,842</text>
+      <text x="507" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#00d4aa">▲ avg 2.1 min</text>
+      <rect x="722" y="92" width="211" height="110" rx="12" fill="#111127" stroke="#2a2a4a"/>
+      <text x="742" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a7a7b8">ACTIVE WALLETS</text>
+      <text x="742" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="bold" fill="#e8e8f0">12,904</text>
+      <text x="742" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#00d4aa">▲ 308 new</text>
+      <rect x="957" y="92" width="211" height="110" rx="12" fill="#111127" stroke="#2a2a4a"/>
+      <text x="977" y="126" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a7a7b8">COLD STORAGE</text>
+      <text x="977" y="162" font-family="Segoe UI, Arial, sans-serif" font-size="26" font-weight="bold" fill="#e8e8f0">$8.4M</text>
+      <text x="977" y="186" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#00d4aa">▲ auto-swept</text>
+  <rect x="252" y="226" width="916" height="300" rx="12" fill="#111127" stroke="#2a2a4a"/>
+  <text x="276" y="256" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#e8e8f0">Deposit Volume — 28 Days</text>
+  <line x1="276" y1="276" x2="1144" y2="276" stroke="#2a2a4a" stroke-dasharray="4 6" opacity="0.6"/><line x1="276" y1="347.6666666666667" x2="1144" y2="347.6666666666667" stroke="#2a2a4a" stroke-dasharray="4 6" opacity="0.6"/><line x1="276" y1="419.33333333333337" x2="1144" y2="419.33333333333337" stroke="#2a2a4a" stroke-dasharray="4 6" opacity="0.6"/><line x1="276" y1="491" x2="1144" y2="491" stroke="#2a2a4a" stroke-dasharray="4 6" opacity="0.6"/>
+  <path d="M 276 496 L 276.0 406.2 L 308.1 387.9 L 340.3 365.3 L 372.4 342.1 L 404.6 331.1 L 436.7 349.0 L 468.9 336.7 L 501.0 353.8 L 533.2 370.2 L 565.3 365.3 L 597.5 379.0 L 629.6 391.4 L 661.8 378.8 L 693.9 388.3 L 726.1 364.8 L 758.2 359.2 L 790.4 342.5 L 822.5 351.7 L 854.7 365.6 L 886.8 365.9 L 919.0 367.5 L 951.1 370.8 L 983.3 356.0 L 1015.4 358.6 L 1047.6 366.7 L 1079.7 365.9 L 1111.9 369.6 L 1144.0 383.0 L 1144 496 Z" fill="#00d4aa" opacity="0.12"/>
+  <polyline points="276.0,406.2 308.1,387.9 340.3,365.3 372.4,342.1 404.6,331.1 436.7,349.0 468.9,336.7 501.0,353.8 533.2,370.2 565.3,365.3 597.5,379.0 629.6,391.4 661.8,378.8 693.9,388.3 726.1,364.8 758.2,359.2 790.4,342.5 822.5,351.7 854.7,365.6 886.8,365.9 919.0,367.5 951.1,370.8 983.3,356.0 1015.4,358.6 1047.6,366.7 1079.7,365.9 1111.9,369.6 1144.0,383.0" fill="none" stroke="#00d4aa" stroke-width="2.5" stroke-linejoin="round"/>
+  <rect x="252" y="550" width="420" height="170" rx="12" fill="#111127" stroke="#2a2a4a"/>
+  <text x="276" y="580" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#e8e8f0"></text>
+  <path d="M 462.0 595.0 A 50 50 0 1 1 430.1 683.5" fill="none" stroke="#00d4aa" stroke-width="26"/><path d="M 430.1 683.5 A 50 50 0 0 1 418.2 620.9" fill="none" stroke="#fbbf24" stroke-width="26"/><path d="M 418.2 620.9 A 50 50 0 0 1 462.0 595.0" fill="none" stroke="#0ea5e9" stroke-width="26"/>
+  <text x="462" y="651" font-family="Segoe UI, Arial, sans-serif" font-size="20" font-weight="bold" fill="#e8e8f0" text-anchor="middle">100%</text>
+  <circle cx="282" cy="652" r="5" fill="#00d4aa"/>
+    <text x="296" y="657" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a7a7b8">USDT — 61%</text><circle cx="282" cy="676" r="5" fill="#fbbf24"/>
+    <text x="296" y="681" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a7a7b8">BTC — 22%</text><circle cx="282" cy="700" r="5" fill="#0ea5e9"/>
+    <text x="296" y="705" font-family="Segoe UI, Arial, sans-serif" font-size="12" fill="#a7a7b8">ETH — 17%</text>
+  <rect x="696" y="550" width="472" height="170" rx="12" fill="#111127" stroke="#2a2a4a"/>
+  <text x="720" y="580" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="600" fill="#e8e8f0">Deposits by Network</text>
+  <line x1="720" y1="690" x2="1144" y2="690" stroke="#2a2a4a"/>
+  <rect x="726" y="677.9544192552142" width="24.333333333333336" height="12.045580744785799" rx="4" fill="#00d4aa" opacity="0.9924846802535324"/><rect x="760.3333333333334" y="629.3546035432765" width="24.333333333333336" height="60.645396456723475" rx="4" fill="#0ea5e9" opacity="0.9342905012278729"/><rect x="794.6666666666666" y="647.1636093269694" width="24.333333333333336" height="42.836390673030536" rx="4" fill="#fbbf24" opacity="0.9813214889553575"/><rect x="829" y="660.0121551882589" width="24.333333333333336" height="29.98784481174112" rx="4" fill="#00d4aa" opacity="0.9441723087282594"/><rect x="863.3333333333334" y="625.7777324130551" width="24.333333333333336" height="64.22226758694488" rx="4" fill="#0ea5e9" opacity="0.764263382544055"/><rect x="897.6666666666667" y="620.4839007020778" width="24.333333333333336" height="69.51609929792221" rx="4" fill="#fbbf24" opacity="0.8167224644606211"/><rect x="932" y="638.4578242529722" width="24.333333333333336" height="51.542175747027784" rx="4" fill="#00d4aa" opacity="0.7865155144003364"/><rect x="966.3333333333334" y="622.6394375047082" width="24.333333333333336" height="67.36056249529176" rx="4" fill="#0ea5e9" opacity="0.8006793982821325"/><rect x="1000.6666666666667" y="673.2259871617201" width="24.333333333333336" height="16.774012838279837" rx="4" fill="#fbbf24" opacity="0.9251337362687417"/><rect x="1035" y="620.9872500067459" width="24.333333333333336" height="69.0127499932542" rx="4" fill="#00d4aa" opacity="0.7706609034404726"/><rect x="1069.3333333333335" y="614.5616847579942" width="24.333333333333336" height="75.43831524200581" rx="4" fill="#0ea5e9" opacity="0.8740792061426483"/><rect x="1103.6666666666667" y="639.800032013841" width="24.333333333333336" height="50.199967986158995" rx="4" fill="#fbbf24" opacity="0.9174302550195067"/></svg>

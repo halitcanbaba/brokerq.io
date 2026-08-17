@@ -9,7 +9,6 @@ export interface ProductSpec {
 }
 
 export interface ProductDetail {
-  id: string;
   headline: string;
   subtitle: string;
   features: { title: string; description: string; icon: string }[];

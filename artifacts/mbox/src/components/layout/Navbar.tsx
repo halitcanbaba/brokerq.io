@@ -97,6 +97,7 @@ export default function Navbar() {
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center space-x-8">
             <NavLink href="/products" sectionId="products" label="Products" testId="nav-products" />
+            <NavLink href="/demos" label="Demos" testId="nav-demos" />
             <NavLink href="/" sectionId="features" label="Features" testId="nav-features" />
             <NavLink href="/about" label="About" testId="nav-about" />
             <NavLink href="/contact" label="Contact" testId="nav-contact" />
@@ -134,6 +135,7 @@ export default function Navbar() {
         <div className="md:hidden bg-[#111127] border-b border-[#2a2a4a]">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 flex flex-col">
             <MobileNavLink href="/products" sectionId="products" label="Products" testId="mobile-nav-products" />
+            <MobileNavLink href="/demos" label="Demos" testId="mobile-nav-demos" />
             <MobileNavLink href="/" sectionId="features" label="Features" testId="mobile-nav-features" />
             <MobileNavLink href="/about" label="About" testId="mobile-nav-about" />
             <MobileNavLink href="/contact" label="Contact" testId="mobile-nav-contact" />
