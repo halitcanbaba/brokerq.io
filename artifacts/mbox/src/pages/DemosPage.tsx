@@ -72,7 +72,7 @@ export default function DemosPage() {
             <div className="flex items-center justify-center gap-3 px-5 py-3 rounded-xl bg-[#111127] border border-[#2a2a4a] text-sm">
               <KeyRound className="w-4 h-4 text-[#00d4aa] shrink-0" />
               <span className="text-[#a7a7b8]">
-                All demos share one login — username{" "}
+                Self-serve demos share one login — username{" "}
                 <span className="font-mono font-semibold text-white">demo</span>, password{" "}
                 <span className="font-mono font-semibold text-white">demo123456</span>
               </span>

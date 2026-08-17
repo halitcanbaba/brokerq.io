@@ -8,12 +8,15 @@ import {
   Trophy,
   Wallet,
   Box,
+  ArrowRightLeft,
   ExternalLink,
   KeyRound,
   User,
   Check,
   ClipboardCopy,
   ArrowRight,
+  Lock,
+  MessageSquare,
   type LucideIcon,
 } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
@@ -27,6 +30,7 @@ const iconMap: Record<string, LucideIcon> = {
   Copy,
   Trophy,
   Wallet,
+  ArrowRightLeft,
 };
 
 const SLIDE_INTERVAL_MS = 1500;
@@ -81,6 +85,7 @@ interface DemoCardProps {
 
 export default function DemoCard({ demo, index = 0 }: DemoCardProps) {
   const IconComponent = iconMap[demo.icon] || Box;
+  const contactOnly = demo.contactOnly === true;
   const [activeSlide, setActiveSlide] = useState(0);
   const intervalRef = useRef<ReturnType<typeof setInterval> | null>(null);
 
@@ -120,13 +125,11 @@ export default function DemoCard({ demo, index = 0 }: DemoCardProps) {
         onTouchStart={startSlideshow}
       >
         {/* Screenshot slideshow */}
-        <a
-          href={demo.url}
-          target="_blank"
-          rel="noopener noreferrer"
-          aria-label={`Open ${demo.title} live demo`}
-          className="relative block aspect-video overflow-hidden bg-[#0a0a1a] border-b border-[#2a2a4a]"
-        >
+        {(() => {
+          const mediaClass =
+            "relative block aspect-video overflow-hidden bg-[#0a0a1a] border-b border-[#2a2a4a]";
+          const media = (
+            <>
           {demo.screenshots.map((src, i) => (
             <img
               key={src}
@@ -156,10 +159,39 @@ export default function DemoCard({ demo, index = 0 }: DemoCardProps) {
           {/* Hover overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a1a]/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-end p-4">
             <span className="flex items-center gap-1.5 text-xs font-semibold text-[#00d4aa]">
-              {demo.url.replace("https://", "")} <ExternalLink className="w-3.5 h-3.5" />
+              {contactOnly ? (
+                <>
+                  Request access <ArrowRight className="w-3.5 h-3.5" />
+                </>
+              ) : (
+                <>
+                  {demo.url?.replace("https://", "")} <ExternalLink className="w-3.5 h-3.5" />
+                </>
+              )}
             </span>
           </div>
-        </a>
+            </>
+          );
+          return contactOnly ? (
+            <Link
+              href="/contact"
+              aria-label={`Request a demo of ${demo.title}`}
+              className={mediaClass}
+            >
+              {media}
+            </Link>
+          ) : (
+            <a
+              href={demo.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Open ${demo.title} live demo`}
+              className={mediaClass}
+            >
+              {media}
+            </a>
+          );
+        })()}
 
         <CardContent className="p-6 flex flex-col">
           <div className="flex justify-between items-start mb-4">
@@ -181,37 +213,65 @@ export default function DemoCard({ demo, index = 0 }: DemoCardProps) {
 
           <p className="text-[#a7a7b8] text-sm leading-relaxed mb-5">{demo.description}</p>
 
-          {/* Demo credentials */}
-          <div className="mb-5">
-            <p className="text-[10px] uppercase tracking-widest text-[#a7a7b8]/70 font-semibold mb-2">
-              Demo Access — click to copy
-            </p>
-            <div className="flex flex-wrap gap-2">
-              <CredentialChip
-                icon={User}
-                label="User"
-                value={demo.credentials.username}
-                testId={`copy-user-${demo.id}`}
-              />
-              <CredentialChip
-                icon={KeyRound}
-                label="Pass"
-                value={demo.credentials.password}
-                testId={`copy-pass-${demo.id}`}
-              />
+          {/* Access block */}
+          {contactOnly ? (
+            <div className="mb-5">
+              <p className="text-[10px] uppercase tracking-widest text-[#a7a7b8]/70 font-semibold mb-2">
+                Private Deployment
+              </p>
+              <div className="flex items-center gap-2 px-3 py-2 rounded-lg bg-[#0a0a1a] border border-[#2a2a4a]">
+                <Lock className="w-3.5 h-3.5 text-[#0ea5e9] shrink-0" />
+                <span className="text-xs text-[#a7a7b8]">
+                  Available on request — contact us for a guided demo.
+                </span>
+              </div>
             </div>
-          </div>
+          ) : (
+            demo.credentials && (
+              <div className="mb-5">
+                <p className="text-[10px] uppercase tracking-widest text-[#a7a7b8]/70 font-semibold mb-2">
+                  Demo Access — click to copy
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  <CredentialChip
+                    icon={User}
+                    label="User"
+                    value={demo.credentials.username}
+                    testId={`copy-user-${demo.id}`}
+                  />
+                  <CredentialChip
+                    icon={KeyRound}
+                    label="Pass"
+                    value={demo.credentials.password}
+                    testId={`copy-pass-${demo.id}`}
+                  />
+                </div>
+              </div>
+            )
+          )}
 
           <div className="mt-auto flex items-center gap-3">
-            <Button
-              asChild
-              className="bg-[#00d4aa] hover:bg-[#00b38f] text-[#0a0a1a] font-semibold flex-1"
-              data-testid={`btn-launch-${demo.id}`}
-            >
-              <a href={demo.url} target="_blank" rel="noopener noreferrer">
-                Launch Live Demo <ExternalLink className="w-4 h-4 ml-1.5" />
-              </a>
-            </Button>
+            {contactOnly ? (
+              <Button
+                asChild
+                className="bg-[#00d4aa] hover:bg-[#00b38f] text-[#0a0a1a] font-semibold flex-1"
+                data-testid={`btn-request-${demo.id}`}
+              >
+                <Link href="/contact">
+                  Request a Demo <MessageSquare className="w-4 h-4 ml-1.5" />
+                </Link>
+              </Button>
+            ) : (
+              <Button
+                asChild
+                className="bg-[#00d4aa] hover:bg-[#00b38f] text-[#0a0a1a] font-semibold flex-1"
+                data-testid={`btn-launch-${demo.id}`}
+              >
+                <a href={demo.url} target="_blank" rel="noopener noreferrer">
+                  Launch Live Demo <ExternalLink className="w-4 h-4 ml-1.5" />
+                </a>
+              </Button>
+            )}
             {demo.productId && (
               <Link
                 href={`/products/${demo.productId}`}

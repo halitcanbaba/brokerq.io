@@ -3,8 +3,8 @@ export interface DemoProject {
   id: string;
   title: string;
   description: string;
-  /** Live demo URL. */
-  url: string;
+  /** Live demo URL. Omitted for contact-only cards. */
+  url?: string;
   /** Category badge label. */
   category: string;
   /** Lucide icon name (must exist in DemoCard's iconMap). */
@@ -13,10 +13,16 @@ export interface DemoProject {
   productId?: string;
   /** Screenshot paths (public/) cycled on hover. */
   screenshots: string[];
-  credentials: {
+  /** Shared demo login. Omitted for contact-only cards. */
+  credentials?: {
     username: string;
     password: string;
   };
+  /**
+   * When true, the card hides credentials/live-launch and instead points the
+   * visitor to the contact page to request a private demo.
+   */
+  contactOnly?: boolean;
 }
 
 const DEMO_CREDENTIALS = { username: "demo", password: "demo123456" };
@@ -75,15 +81,25 @@ export const demoProjects: DemoProject[] = [
     credentials: DEMO_CREDENTIALS,
   },
   {
+    id: "migrator",
+    title: "MT5 → MT5 Migrator",
+    description:
+      "Server-to-server MT5 migration tool — connection profiles, staged migrate/prep runs, live execution logs, account & position verification with drift detection.",
+    category: "Migration",
+    icon: "ArrowRightLeft",
+    productId: "mt5-migration-tool",
+    screenshots: shots("migrator", 3, "png"),
+    contactOnly: true,
+  },
+  {
     id: "pay",
     title: "brokerQ Pay",
     description:
       "Crypto payment gateway — per-customer deposit wallets, instant trading account crediting, auto-sweep to cold storage and full transaction audit trail.",
-    url: "https://pay.brokerq.io",
     category: "Gateway",
     icon: "Wallet",
     productId: "crypto-gateway",
     screenshots: shots("pay", 3),
-    credentials: DEMO_CREDENTIALS,
+    contactOnly: true,
   },
 ];
