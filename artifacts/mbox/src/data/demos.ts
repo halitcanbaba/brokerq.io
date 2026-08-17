@@ -27,8 +27,17 @@ export interface DemoProject {
 
 const DEMO_CREDENTIALS = { username: "demo", password: "demo123456" };
 
+/**
+ * Bump this when screenshots are re-captured so browsers bypass any cached
+ * copy of the same filename (the images are overwritten in place on deploy).
+ */
+const ASSET_VERSION = "2";
+
 function shots(id: string, count: number, ext: "png" | "svg" = "svg"): string[] {
-  return Array.from({ length: count }, (_, i) => `/demos/${id}/${i + 1}.${ext}`);
+  return Array.from(
+    { length: count },
+    (_, i) => `/demos/${id}/${i + 1}.${ext}?v=${ASSET_VERSION}`,
+  );
 }
 
 export const demoProjects: DemoProject[] = [
