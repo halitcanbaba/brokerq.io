@@ -800,6 +800,181 @@ export const productDetails: Record<string, ProductDetail> = {
     ],
   },
 
+  "grey-label": {
+    headline: "Grey Label Solution",
+    subtitle:
+      "Run your own branded brokerage on our MT4/MT5 infrastructure — your name, your spreads, your clients — without buying and maintaining a full white-label server licence.",
+    features: [
+      {
+        title: "Your Brand, Our Infrastructure",
+        description:
+          "Operate under your own brand, domain and client portal while trades route through our regulated MT4/MT5 servers and liquidity.",
+        icon: "Paintbrush",
+      },
+      {
+        title: "Own Spreads & Markups",
+        description:
+          "Set your own group spreads, commissions and swap markups per symbol and keep the full mark-up as revenue.",
+        icon: "TrendingUp",
+      },
+      {
+        title: "Dedicated Manager Access",
+        description:
+          "A manager login scoped to your own client groups for onboarding, deposits/withdrawals and reporting — with no server-admin overhead.",
+        icon: "UserCheck",
+      },
+      {
+        title: "Fast Go-Live",
+        description:
+          "Launch in days, not months: no server provisioning, data-centre contracts or bridge licensing to procure.",
+        icon: "Gauge",
+      },
+    ],
+    benefits: [
+      "Launch a branded brokerage without full white-label capital outlay",
+      "Keep 100% of your spread and commission mark-up",
+      "No server, data-centre or bridge licences to manage",
+      "Upgrade to your own dedicated server whenever you outgrow grey label",
+    ],
+    useCases: [
+      "Introducing brokers ready to run their own book",
+      "Regional partners launching a local brand quickly",
+      "New brokerages validating a market before a full white-label build",
+    ],
+    seoTitle: "Grey Label Brokerage Solution — Branded MT4/MT5 Without a White Label",
+    metaDescription:
+      "Launch a branded FX brokerage on our MT4/MT5 infrastructure with a grey label: your name, spreads and clients, your own markups and a dedicated manager — without full white-label cost.",
+    seoKeywords: [
+      "grey label brokerage",
+      "grey label MT4 MT5",
+      "grey label forex",
+      "grey label vs white label",
+      "branded broker solution",
+      "MetaTrader grey label",
+      "forex grey label provider",
+    ],
+    longDescription:
+      "A grey label sits between an introducing-broker arrangement and a full white label: you get your own brand, client portal and pricing control, but you run on our existing regulated MetaTrader 4 and MetaTrader 5 servers and liquidity instead of buying and maintaining your own server licence. You define your client groups, set your own spreads, commissions and swap markups, and keep the full mark-up as revenue — while we handle the platform, data-centre, bridge and infrastructure maintenance behind the scenes. It is the fastest, lowest-capital way to go live as a branded brokerage, and when your volumes justify it you can graduate to a dedicated white-label server with a zero-downtime grey label migration.",
+    schemaType: "Service",
+    specs: [
+      { label: "Model", value: "Grey label on shared MT4/MT5 servers" },
+      { label: "Branding", value: "Your name, domain & client portal" },
+      { label: "Pricing Control", value: "Own spreads, commissions & swap markups" },
+      { label: "Setup Time", value: "Typically 3–10 business days" },
+      { label: "Upgrade Path", value: "Migrate to dedicated white-label server anytime" },
+    ],
+    faqs: [
+      {
+        question: "What is the difference between a grey label and a white label?",
+        answer:
+          "A white label means you license and operate your own dedicated MT4/MT5 server under your brand, with full control and higher cost. A grey label gives you your own brand, client portal and pricing control while running on our shared, already-licensed servers — so you go live faster and with far less capital, at the trade-off of not owning the server itself.",
+      },
+      {
+        question: "Can I set my own spreads and commissions on a grey label?",
+        answer:
+          "Yes. You get manager-level control over your own client groups, so you define spreads, commissions and swap markups per symbol and keep the full mark-up as your revenue.",
+      },
+      {
+        question: "How quickly can a grey label go live?",
+        answer:
+          "Because there is no server to provision or bridge to license, most grey labels are live within 3 to 10 business days once branding, group configuration and client-portal setup are complete.",
+      },
+      {
+        question: "Can I move from a grey label to my own server later?",
+        answer:
+          "Absolutely. When your volumes justify a dedicated server we run a zero-downtime grey label migration that moves your accounts, balances and full trading history to your own white-label MT4/MT5 environment.",
+      },
+    ],
+  },
+
+  "grey-label-migration": {
+    headline: "Grey Label Migration",
+    subtitle:
+      "Move your grey label client book between master brokers, or graduate to your own dedicated server, with accounts, balances and full trading history transferred at zero downtime.",
+    features: [
+      {
+        title: "Book Portability",
+        description:
+          "Transfer your entire grey label book — accounts, groups, balances and leverage — from one master broker to another without clients re-registering.",
+        icon: "RefreshCcw",
+      },
+      {
+        title: "History Preservation",
+        description:
+          "Closed orders, deal history and equity curves move with the accounts so clients keep their full track record after the switch.",
+        icon: "History",
+      },
+      {
+        title: "Open Position Transfer",
+        description:
+          "Live positions are carried over with a price-lock cut-over to avoid slippage during the switch window.",
+        icon: "ArrowRightLeft",
+      },
+      {
+        title: "Grey-to-White Upgrade",
+        description:
+          "Graduate from a shared grey label onto your own dedicated white-label MT4/MT5 server as a single, reconciled migration.",
+        icon: "Server",
+      },
+    ],
+    benefits: [
+      "Switch master brokers without asking clients to re-register",
+      "Retain full trade history and open positions across the move",
+      "Zero trading downtime with a price-locked cut-over",
+      "Clean upgrade path from grey label to a dedicated server",
+    ],
+    useCases: [
+      "Grey label brokers changing their master or liquidity provider",
+      "Brokers upgrading from a grey label to their own white-label server",
+      "Consolidating multiple grey label books under one master",
+    ],
+    seoTitle: "Grey Label Migration — Move Your Broker Book Between Servers, Zero Downtime",
+    metaDescription:
+      "Migrate a grey label FX book between master brokers or upgrade to your own MT4/MT5 server. Accounts, balances, full history and open positions transferred with a price-locked, zero-downtime cut-over.",
+    seoKeywords: [
+      "grey label migration",
+      "broker book migration",
+      "change master broker",
+      "grey label to white label",
+      "MT4 MT5 book transfer",
+      "broker account migration",
+      "zero downtime broker migration",
+    ],
+    longDescription:
+      "Grey label migration moves an entire branded client book from one MetaTrader environment to another — whether you are switching master brokers, consolidating several grey label books, or upgrading from a shared grey label onto your own dedicated white-label server. Every account, group, balance, leverage setting, closed trade, deal record and open position is transferred and reconciled so clients never re-register and never lose their history. The cut-over uses the same staged, price-locked engine as our MT4-to-MT5 migration: your current environment stays live during preparation, the switch itself runs in a sub-minute maintenance window with no slippage, and a full pre-migration snapshot is retained for rollback. It is the safe way to change providers or take ownership of your infrastructure without disrupting your traders.",
+    schemaType: "SoftwareApplication",
+    platforms: ["MetaTrader 4", "MetaTrader 5"],
+    specs: [
+      { label: "Migration Type", value: "Grey label book transfer / grey-to-white" },
+      { label: "Trading Downtime", value: "< 60 seconds" },
+      { label: "Data Migrated", value: "Accounts, groups, balances, history, open positions" },
+      { label: "Rollback Window", value: "30 days post cut-over" },
+      { label: "Typical Timeline", value: "1–3 weeks end-to-end" },
+    ],
+    faqs: [
+      {
+        question: "Will my clients have to re-register after a grey label migration?",
+        answer:
+          "No. Accounts, logins, balances and groups are transferred intact, so from the client's perspective their account simply continues — no re-registration and no lost history.",
+      },
+      {
+        question: "Can I move from a grey label to my own white-label server?",
+        answer:
+          "Yes, that is one of the most common uses. We migrate your full grey label book onto your own dedicated MT4/MT5 server in a single reconciled cut-over, so you take ownership of your infrastructure without disrupting traders.",
+      },
+      {
+        question: "Do open positions and trade history survive the migration?",
+        answer:
+          "Yes. Closed orders, deal history and equity curves are preserved, and open positions are carried across with a price-lock mechanism that eliminates slippage during the switch.",
+      },
+      {
+        question: "How much downtime is involved?",
+        answer:
+          "The production cut-over runs in a single maintenance window of under 60 seconds of trading downtime. All preparation and reconciliation happens while your current environment stays fully live.",
+      },
+    ],
+  },
+
   "license-consulting": {
     headline: "Offshore & Onshore License Consulting",
     subtitle:

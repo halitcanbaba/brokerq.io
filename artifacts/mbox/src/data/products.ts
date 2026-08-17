@@ -30,6 +30,13 @@ export const products: Product[] = [
     icon: "ArrowLeftRight"
   },
   {
+    id: "grey-label-migration",
+    title: "Grey Label Migration",
+    description: "Move your grey label book between master brokers — or graduate to your own dedicated server — with accounts, balances and full history transferred at zero downtime.",
+    category: "Migration",
+    icon: "RefreshCcw"
+  },
+  {
     id: "risk-monitoring-system",
     title: "Risk Management",
     description: "Comprehensive risk management suite: real-time exposure monitoring, hedging analytics, automated alerts, and P&L controls for broker operations.",
@@ -84,6 +91,13 @@ export const products: Product[] = [
     description: "Automated analysis of all groups and symbols for swap and spread configurations — flags anomalies and inconsistencies across your platform.",
     category: "Risk",
     icon: "BarChart3"
+  },
+  {
+    id: "grey-label",
+    title: "Grey Label Solution",
+    description: "Launch your own brokerage brand on our MT4/MT5 infrastructure — your name, spreads and clients — without the capital and setup cost of a full white-label server licence.",
+    category: "Consulting",
+    icon: "Paintbrush"
   },
   {
     id: "license-consulting",

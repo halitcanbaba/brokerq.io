@@ -17,6 +17,8 @@ import {
   Globe,
   Wallet,
   LineChart,
+  Paintbrush,
+  RefreshCcw,
   type LucideIcon,
 } from "lucide-react";
 import { Link } from "wouter";
@@ -41,6 +43,8 @@ const iconMap: Record<string, LucideIcon> = {
   Globe,
   Wallet,
   LineChart,
+  Paintbrush,
+  RefreshCcw,
 };
 
 interface ProductCardProps {
