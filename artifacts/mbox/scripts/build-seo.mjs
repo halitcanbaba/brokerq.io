@@ -60,18 +60,23 @@ async function loadRoutes() {
 // JSON-LD per route type.
 // -----------------------------------------------------------------------------
 
-function landingJsonLd() {
+function landingJsonLd(products = []) {
   return [
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       name: SITE_NAME,
+      alternateName: "brokerQ",
       url: BASE_URL,
       logo: `${BASE_URL}/favicon.svg`,
+      image: DEFAULT_IMAGE,
+      slogan: "Enterprise MetaTrader infrastructure for FX brokers",
       description:
-        "Enterprise-grade platform tools, migration services, and risk management for FX brokers worldwide.",
+        "Enterprise-grade MetaTrader (MT4/MT5) platform tools, plugin development, migration services, copy trading, PAMM/MAMM, prop-firm tooling, risk management, CRM integration, crypto payment gateway and grey/white-label solutions for FX brokers worldwide.",
       foundingDate: "2014",
       areaServed: "Worldwide",
+      email: "sales@brokerq.io",
+      telephone: "+44 7537 121984",
       knowsAbout: [
         "FX Broker Infrastructure",
         "MetaTrader 4",
@@ -80,14 +85,33 @@ function landingJsonLd() {
         "MT4 to MT5 Migration",
         "Copy Trading",
         "PAMM MAMM",
+        "Prop Firm Technology",
         "Risk Management Systems",
         "CRM Integration",
+        "Crypto Payment Gateway",
+        "Grey Label Brokerage",
         "White-label Broker Solutions",
       ],
       contactPoint: [
-        { "@type": "ContactPoint", email: "sales@brokerq.io", contactType: "sales", availableLanguage: ["English"] },
+        { "@type": "ContactPoint", email: "sales@brokerq.io", telephone: "+44 7537 121984", contactType: "sales", availableLanguage: ["English"] },
         { "@type": "ContactPoint", email: "support@brokerq.io", contactType: "technical support", availableLanguage: ["English"] },
       ],
+      ...(products.length
+        ? {
+            hasOfferCatalog: {
+              "@type": "OfferCatalog",
+              name: `${SITE_NAME} Products & Services`,
+              itemListElement: products.map((p) => ({
+                "@type": "Offer",
+                itemOffered: {
+                  "@type": "Service",
+                  name: p.title,
+                  url: `${BASE_URL}/products/${p.id}`,
+                },
+              })),
+            },
+          }
+        : {}),
     },
     {
       "@context": "https://schema.org",
@@ -171,6 +195,21 @@ async function productJsonLd(productRoute, productsById, detailsById) {
   return schemas;
 }
 
+function faqJsonLd(faqs) {
+  if (!faqs?.length) return [];
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    },
+  ];
+}
+
 function demosJsonLd(demoProjects) {
   const canonical = `${BASE_URL}/demos`;
   const itemList = {
@@ -222,8 +261,9 @@ function pluginHubJsonLd() {
 }
 
 async function jsonLdForRoute(route, ctx) {
-  if (route.path === "/") return landingJsonLd();
+  if (route.path === "/") return landingJsonLd(ctx.products);
   if (route.path === "/demos") return demosJsonLd(ctx.demoProjects);
+  if (route.path === "/faq") return faqJsonLd(ctx.faqs);
   if (route.path === "/services/metatrader-plugins") return pluginHubJsonLd();
   if (route.path.startsWith("/products/")) {
     return productJsonLd(route, ctx.productsById, ctx.detailsById);
@@ -340,6 +380,89 @@ function buildSitemap(routes, lastmod) {
 }
 
 // -----------------------------------------------------------------------------
+// llms.txt — curated, LLM-friendly index of the site (see https://llmstxt.org).
+// AI search engines and assistants (ChatGPT, Perplexity, Claude, Gemini, etc.)
+// use this to understand and cite the site accurately.
+// -----------------------------------------------------------------------------
+
+function buildLlmsTxt(products, detailsById) {
+  const L = [];
+  L.push(`# ${SITE_NAME}`);
+  L.push("");
+  L.push(
+    "> Enterprise MetaTrader (MT4/MT5) infrastructure, plugins and services for FX brokers: platform installation, zero-downtime MT4→MT5 migration, real-time risk management, copy trading, PAMM/MAMM, prop-firm tooling, CRM integration, crypto payment gateway, grey/white-label solutions and licensing consulting."
+  );
+  L.push("");
+  L.push(
+    "brokerQ.io is a technology provider for regulated FX brokerages. Founded in 2014, the team builds and operates the trading infrastructure brokers run on — helping them launch, migrate between MetaTrader servers, monitor risk in real time, and automate operations. Every product is purpose-built for MetaTrader 4 and MetaTrader 5 environments and is used by brokers worldwide."
+  );
+  L.push("");
+  L.push("## Products & Services");
+  L.push("");
+  for (const p of products) {
+    const d = detailsById.get(p.id);
+    const desc = (d?.subtitle ?? p.description).replace(/\s+/g, " ").trim();
+    L.push(`- [${p.title}](${BASE_URL}/products/${p.id}): ${desc}`);
+  }
+  L.push("");
+  L.push("## Key Pages");
+  L.push("");
+  L.push(`- [Live Demos](${BASE_URL}/demos): Try the tools online — broker reporting, real-time risk monitor, copy trading, prop-firm management, MT5→MT5 migrator and crypto payment gateway. Self-serve demos use username \`demo\` / password \`demo123456\`.`);
+  L.push(`- [MetaTrader Plugin Development](${BASE_URL}/services/metatrader-plugins): Custom MT4/MT5 plugin development for FX brokers.`);
+  L.push(`- [FAQ](${BASE_URL}/faq): Answers on platform installation, MT4→MT5 migration, risk management, CRM integration and infrastructure.`);
+  L.push(`- [About](${BASE_URL}/about): 12+ years building FX broker technology.`);
+  L.push(`- [Contact](${BASE_URL}/contact): Request a demo or consultation.`);
+  L.push("");
+  L.push("## Contact");
+  L.push("");
+  L.push("- Sales: sales@brokerq.io");
+  L.push("- Support: support@brokerq.io");
+  L.push("- Phone: +44 7537 121984 (Mon–Fri, 08:00–20:00 GMT)");
+  L.push("");
+  return L.join("\n");
+}
+
+// -----------------------------------------------------------------------------
+// robots.txt — welcome all crawlers, including AI/LLM crawlers, and point to
+// both the sitemap and llms.txt.
+// -----------------------------------------------------------------------------
+
+function buildRobotsTxt() {
+  const aiBots = [
+    "GPTBot",
+    "ChatGPT-User",
+    "OAI-SearchBot",
+    "ClaudeBot",
+    "Claude-Web",
+    "anthropic-ai",
+    "PerplexityBot",
+    "Perplexity-User",
+    "Google-Extended",
+    "Applebot-Extended",
+    "CCBot",
+    "Amazonbot",
+    "Bytespider",
+    "Meta-ExternalAgent",
+    "cohere-ai",
+  ];
+  const lines = [
+    "# brokerQ.io — all crawlers welcome, including AI / LLM crawlers.",
+    "User-agent: *",
+    "Allow: /",
+    "",
+    "# Explicitly welcome AI search & assistant crawlers.",
+  ];
+  for (const b of aiBots) {
+    lines.push(`User-agent: ${b}`);
+    lines.push("Allow: /");
+  }
+  lines.push("");
+  lines.push(`Sitemap: ${BASE_URL}/sitemap.xml`);
+  lines.push("");
+  return lines.join("\n");
+}
+
+// -----------------------------------------------------------------------------
 // Main.
 // -----------------------------------------------------------------------------
 
@@ -370,13 +493,19 @@ async function main() {
   );
   const demoProjects = demosMod.demoProjects;
 
+  const faqsMod = await import(
+    new URL("../src/data/faqs.ts", import.meta.url).href
+  );
+  const faqs = faqsMod.faqs;
+  const products = productsMod.products;
+
   const baseHtml = await readFile(INDEX_HTML, "utf-8");
   const lastmod = new Date().toISOString().slice(0, 10);
 
   // 1. Per-route HTML files.
   let generated = 0;
   for (const route of routes) {
-    const jsonLd = await jsonLdForRoute(route, { productsById, detailsById, demoProjects });
+    const jsonLd = await jsonLdForRoute(route, { productsById, detailsById, demoProjects, faqs, products });
     const html = injectSeoIntoHtml(baseHtml, route, jsonLd);
 
     if (route.path === "/") {
@@ -395,6 +524,15 @@ async function main() {
   const sitemap = buildSitemap(routes, lastmod);
   await writeFile(path.join(DIST_DIR, "sitemap.xml"), sitemap, "utf-8");
   console.log(`[build-seo] Wrote sitemap.xml with ${routes.length} URLs.`);
+
+  // 2b. llms.txt — LLM-friendly site index for AI search engines & assistants.
+  const llms = buildLlmsTxt(products, detailsById);
+  await writeFile(path.join(DIST_DIR, "llms.txt"), llms, "utf-8");
+  console.log("[build-seo] Wrote llms.txt.");
+
+  // 2c. robots.txt — welcome all crawlers incl. AI/LLM bots + sitemap.
+  await writeFile(path.join(DIST_DIR, "robots.txt"), buildRobotsTxt(), "utf-8");
+  console.log("[build-seo] Wrote robots.txt (AI crawlers welcomed).");
 
   // 3. robots.txt sanity.
   try {
