@@ -171,6 +171,30 @@ async function productJsonLd(productRoute, productsById, detailsById) {
   return schemas;
 }
 
+function demosJsonLd(demoProjects) {
+  const canonical = `${BASE_URL}/demos`;
+  const itemList = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: `${SITE_NAME} Live Product Demos`,
+    itemListElement: demoProjects.map((d, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: d.title,
+      url: d.url ?? (d.productId ? `${BASE_URL}/products/${d.productId}` : canonical),
+    })),
+  };
+  const breadcrumb = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+      { "@type": "ListItem", position: 2, name: "Live Demos", item: canonical },
+    ],
+  };
+  return [itemList, breadcrumb];
+}
+
 function pluginHubJsonLd() {
   const canonical = `${BASE_URL}/services/metatrader-plugins`;
   return [
@@ -199,6 +223,7 @@ function pluginHubJsonLd() {
 
 async function jsonLdForRoute(route, ctx) {
   if (route.path === "/") return landingJsonLd();
+  if (route.path === "/demos") return demosJsonLd(ctx.demoProjects);
   if (route.path === "/services/metatrader-plugins") return pluginHubJsonLd();
   if (route.path.startsWith("/products/")) {
     return productJsonLd(route, ctx.productsById, ctx.detailsById);
@@ -340,13 +365,18 @@ async function main() {
   const productsById = new Map(productsMod.products.map((p) => [p.id, p]));
   const detailsById = new Map(Object.entries(detailsMod.productDetails));
 
+  const demosMod = await import(
+    new URL("../src/data/demos.ts", import.meta.url).href
+  );
+  const demoProjects = demosMod.demoProjects;
+
   const baseHtml = await readFile(INDEX_HTML, "utf-8");
   const lastmod = new Date().toISOString().slice(0, 10);
 
   // 1. Per-route HTML files.
   let generated = 0;
   for (const route of routes) {
-    const jsonLd = await jsonLdForRoute(route, { productsById, detailsById });
+    const jsonLd = await jsonLdForRoute(route, { productsById, detailsById, demoProjects });
     const html = injectSeoIntoHtml(baseHtml, route, jsonLd);
 
     if (route.path === "/") {
