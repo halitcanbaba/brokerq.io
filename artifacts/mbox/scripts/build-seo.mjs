@@ -195,6 +195,67 @@ async function productJsonLd(productRoute, productsById, detailsById) {
   return schemas;
 }
 
+function articleJsonLd(article) {
+  const canonical = `${BASE_URL}/insights/${article.slug}`;
+  const schemas = [
+    {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      headline: article.title,
+      description: article.metaDescription,
+      datePublished: article.datePublished,
+      dateModified: article.dateModified,
+      author: { "@type": "Organization", name: SITE_NAME, url: BASE_URL },
+      publisher: {
+        "@type": "Organization",
+        name: SITE_NAME,
+        logo: { "@type": "ImageObject", url: `${BASE_URL}/favicon.svg` },
+      },
+      mainEntityOfPage: canonical,
+      image: DEFAULT_IMAGE,
+      articleSection: article.category,
+      keywords: article.seoKeywords.join(", "),
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: BASE_URL },
+        { "@type": "ListItem", position: 2, name: "Insights", item: `${BASE_URL}/insights` },
+        { "@type": "ListItem", position: 3, name: article.title, item: canonical },
+      ],
+    },
+  ];
+  if (article.faqs?.length) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: article.faqs.map((f) => ({
+        "@type": "Question",
+        name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    });
+  }
+  return schemas;
+}
+
+function insightsJsonLd(articles) {
+  return [
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      name: `${SITE_NAME} Insights`,
+      itemListElement: articles.map((a, i) => ({
+        "@type": "ListItem",
+        position: i + 1,
+        url: `${BASE_URL}/insights/${a.slug}`,
+        name: a.title,
+      })),
+    },
+  ];
+}
+
 function faqJsonLd(faqs) {
   if (!faqs?.length) return [];
   return [
@@ -263,6 +324,12 @@ function pluginHubJsonLd() {
 async function jsonLdForRoute(route, ctx) {
   if (route.path === "/") return landingJsonLd(ctx.products);
   if (route.path === "/demos") return demosJsonLd(ctx.demoProjects);
+  if (route.path === "/insights") return insightsJsonLd(ctx.articles);
+  if (route.path.startsWith("/insights/")) {
+    const slug = route.path.replace("/insights/", "");
+    const article = ctx.articles.find((a) => a.slug === slug);
+    return article ? articleJsonLd(article) : [];
+  }
   if (route.path === "/faq") return faqJsonLd(ctx.faqs);
   if (route.path === "/services/metatrader-plugins") return pluginHubJsonLd();
   if (route.path.startsWith("/products/")) {
@@ -385,7 +452,7 @@ function buildSitemap(routes, lastmod) {
 // use this to understand and cite the site accurately.
 // -----------------------------------------------------------------------------
 
-function buildLlmsTxt(products, detailsById) {
+function buildLlmsTxt(products, detailsById, articles = []) {
   const L = [];
   L.push(`# ${SITE_NAME}`);
   L.push("");
@@ -405,6 +472,14 @@ function buildLlmsTxt(products, detailsById) {
     L.push(`- [${p.title}](${BASE_URL}/products/${p.id}): ${desc}`);
   }
   L.push("");
+  if (articles.length) {
+    L.push("## Insights & Guides");
+    L.push("");
+    for (const a of articles) {
+      L.push(`- [${a.title}](${BASE_URL}/insights/${a.slug}): ${a.excerpt.replace(/\s+/g, " ").trim()}`);
+    }
+    L.push("");
+  }
   L.push("## Key Pages");
   L.push("");
   L.push(`- [Live Demos](${BASE_URL}/demos): Try the tools online — broker reporting, real-time risk monitor, copy trading, prop-firm management, MT5→MT5 migrator and crypto payment gateway. Self-serve demos use username \`demo\` / password \`demo123456\`.`);
@@ -499,13 +574,18 @@ async function main() {
   const faqs = faqsMod.faqs;
   const products = productsMod.products;
 
+  const articlesMod = await import(
+    new URL("../src/data/articles.ts", import.meta.url).href
+  );
+  const articles = articlesMod.articles;
+
   const baseHtml = await readFile(INDEX_HTML, "utf-8");
   const lastmod = new Date().toISOString().slice(0, 10);
 
   // 1. Per-route HTML files.
   let generated = 0;
   for (const route of routes) {
-    const jsonLd = await jsonLdForRoute(route, { productsById, detailsById, demoProjects, faqs, products });
+    const jsonLd = await jsonLdForRoute(route, { productsById, detailsById, demoProjects, faqs, products, articles });
     const html = injectSeoIntoHtml(baseHtml, route, jsonLd);
 
     if (route.path === "/") {
@@ -526,7 +606,7 @@ async function main() {
   console.log(`[build-seo] Wrote sitemap.xml with ${routes.length} URLs.`);
 
   // 2b. llms.txt — LLM-friendly site index for AI search engines & assistants.
-  const llms = buildLlmsTxt(products, detailsById);
+  const llms = buildLlmsTxt(products, detailsById, articles);
   await writeFile(path.join(DIST_DIR, "llms.txt"), llms, "utf-8");
   console.log("[build-seo] Wrote llms.txt.");
 

@@ -25,6 +25,8 @@ const ProductDetailPage = lazy(() => import("./pages/ProductDetailPage"));
 const FAQPage = lazy(() => import("./pages/FAQPage"));
 const MetaTraderPluginsPage = lazy(() => import("./pages/MetaTraderPluginsPage"));
 const DemosPage = lazy(() => import("./pages/DemosPage"));
+const InsightsPage = lazy(() => import("./pages/InsightsPage"));
+const ArticlePage = lazy(() => import("./pages/ArticlePage"));
 
 const queryClient = new QueryClient();
 
@@ -131,6 +133,8 @@ function Router() {
         <Route path="/products/:id">{(params) => <ProductDetailPage id={params.id} />}</Route>
         <Route path="/services/metatrader-plugins" component={MetaTraderPluginsPage} />
         <Route path="/demos" component={DemosPage} />
+        <Route path="/insights" component={InsightsPage} />
+        <Route path="/insights/:slug">{(params) => <ArticlePage slug={params.slug} />}</Route>
         <Route path="/about" component={AboutPage} />
         <Route path="/faq" component={FAQPage} />
         <Route path="/contact" component={ContactPage} />

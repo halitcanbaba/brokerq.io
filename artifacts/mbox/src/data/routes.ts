@@ -13,6 +13,7 @@
 
 import { products } from "./products";
 import { productDetails } from "./product-details";
+import { articles } from "./articles";
 
 export interface StaticRouteMeta {
   path: string;
@@ -89,6 +90,20 @@ export const staticRoutes: StaticRouteMeta[] = [
     changefreq: "monthly",
   },
   {
+    path: "/insights",
+    title: "Insights — Broker Technology Guides & Analysis",
+    description:
+      "Practical guides and analysis for FX broker operators: MetaTrader migration, risk management, copy trading, PAMM/MAMM, grey/white label and broker infrastructure.",
+    keywords: [
+      "FX broker guides",
+      "MetaTrader migration guide",
+      "broker technology blog",
+      "MT4 MT5 insights",
+    ],
+    priority: 0.8,
+    changefreq: "weekly",
+  },
+  {
     path: "/about",
     title: "About brokerQ.io — 12+ Years of FX Broker Technology",
     description:
@@ -133,7 +148,19 @@ export function getProductRoutes(): StaticRouteMeta[] {
   });
 }
 
+/** All article routes derived from data. */
+export function getArticleRoutes(): StaticRouteMeta[] {
+  return articles.map((a) => ({
+    path: `/insights/${a.slug}`,
+    title: a.seoTitle,
+    description: a.metaDescription,
+    keywords: a.seoKeywords,
+    priority: 0.75,
+    changefreq: "monthly" as const,
+  }));
+}
+
 /** Every route that should appear in sitemap.xml / be prerendered. */
 export function getAllRoutes(): StaticRouteMeta[] {
-  return [...staticRoutes, ...getProductRoutes()];
+  return [...staticRoutes, ...getProductRoutes(), ...getArticleRoutes()];
 }
