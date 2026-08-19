@@ -230,5 +230,50 @@
       <g:product_type>Broker Services &gt; Platform</g:product_type>
     </item>
 
+    <item>
+      <g:id>report-tool</g:id>
+      <g:title>Report Tool — Automated Broker Reporting</g:title>
+      <g:description>Automated MT4/MT5 broker reporting: design report templates once and schedule daily/weekly/monthly runs of volume, commission and P&amp;L summaries across all your servers.</g:description>
+      <g:link>https://brokerq.io/products/report-tool</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>2000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Reporting</g:product_type>
+    </item>
+
+    <item>
+      <g:id>grey-label</g:id>
+      <g:title>Grey Label Brokerage Solution</g:title>
+      <g:description>Launch a branded FX brokerage on our MT4/MT5 infrastructure — your name, spreads and clients, your own markups and a dedicated manager — without full white-label server cost.</g:description>
+      <g:link>https://brokerq.io/products/grey-label</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>8000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Grey Label</g:product_type>
+    </item>
+
+    <item>
+      <g:id>grey-label-migration</g:id>
+      <g:title>Grey Label Migration</g:title>
+      <g:description>Move your grey label book between master brokers or upgrade to your own dedicated MT4/MT5 server — accounts, balances, full history and open positions transferred at zero downtime.</g:description>
+      <g:link>https://brokerq.io/products/grey-label-migration</g:link>
+      <g:image_link>https://brokerq.io/opengraph.jpg</g:image_link>
+      <g:availability>in stock</g:availability>
+      <g:price>4000.00 USD</g:price>
+      <g:condition>new</g:condition>
+      <g:brand>brokerQ.io</g:brand>
+      <g:identifier_exists>no</g:identifier_exists>
+      <g:google_product_category>Business &amp; Industrial &gt; Business Services</g:google_product_category>
+      <g:product_type>Broker Services &gt; Migration</g:product_type>
+    </item>
+
   </channel>
 </rss>
